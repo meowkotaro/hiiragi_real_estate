@@ -1,0 +1,36 @@
+@use 'libs/mixin' as *;
+
+$cMain: #003366;
+$cBtn: #A3B8CC;
+$cArea: #E6E6E6;
+$cH2Background: rgba(0, 51, 102, 0.1);
+
+
+html{
+    font-size: 62.5%;
+}
+
+.h2-font {
+    font-size: 2rem;
+    color: $cMain;
+
+    @include mq() {
+        font-size: 2.4rem;
+    }
+}
+
+.md-font {
+    font-size: 1.6rem;
+
+    @include mq() {
+        font-size: 1.8rem;
+    }
+}
+
+.sm-font {
+    font-size: 1rem;
+
+    @include mq() {
+        font-size: 1.2rem;
+    }
+}

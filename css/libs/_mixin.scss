@@ -1,0 +1,39 @@
+// media query
+$breakpoints:(
+  sm: 'screen and (min-width: 500px)', 
+  md: 'screen and (min-width: 768px)', 
+  lg: 'screen and (min-width: 960px)', 
+  xl: 'screen and (min-width: 1200px)', 
+) ;
+
+@mixin mq($breakpoint: md) {
+    @media #{map-get($breakpoints,$breakpoint)} {
+        @content;
+    }
+};
+
+@mixin bgi(
+  $img,
+  $repeat: no-repeat,
+  $size: cover,
+){
+  background: {
+    image: $img;
+    repeat: $repeat;
+    size: $size;
+  };
+}
+
+@mixin flex(
+  $fd: row,
+  $jc: space-between,
+  $ai: center,
+) {
+  display: flex;
+  flex-direction: $fd;
+  justify-content: $jc;
+  align-items: $ai;
+}
+
+
+
