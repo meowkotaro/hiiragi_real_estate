@@ -1,4 +1,4 @@
-@use 'libs/mixin' as *;
+@use 'mixin' as *;
 
 $cMain: #003366;
 $cBtn: #A3B8CC;
@@ -27,10 +27,33 @@ html{
     }
 }
 
+.sl-font {
+    font-size: 1.4rem;
+
+    @include mq() {
+        font-size: 1.6rem;
+    }
+}
+
 .sm-font {
     font-size: 1rem;
 
     @include mq() {
         font-size: 1.2rem;
     }
+}
+
+.sm-mg {
+    margin-bottom: 20px;
+    @include mq() {
+        margin-bottom: 25px;
+    }
+}
+
+.md-mg {
+    margin-bottom: 50px;
+}
+
+h2 {
+    @extend .h2-font;
 }

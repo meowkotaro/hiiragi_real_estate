@@ -2,12 +2,12 @@ html {
   font-size: 62.5%;
 }
 
-.h2-font {
+.h2-font, h2 {
   font-size: 2rem;
   color: #003366;
 }
 @media screen and (min-width: 768px) {
-  .h2-font {
+  .h2-font, h2 {
     font-size: 2.4rem;
   }
 }
@@ -21,6 +21,15 @@ html {
   }
 }
 
+.sl-font {
+  font-size: 1.4rem;
+}
+@media screen and (min-width: 768px) {
+  .sl-font {
+    font-size: 1.6rem;
+  }
+}
+
 .sm-font {
   font-size: 1rem;
 }
@@ -30,24 +39,50 @@ html {
   }
 }
 
+.sm-mg {
+  margin-bottom: 20px;
+}
+@media screen and (min-width: 768px) {
+  .sm-mg {
+    margin-bottom: 25px;
+  }
+}
+
+.md-mg {
+  margin-bottom: 50px;
+}
+
+.hidden {
+  overflow: hidden;
+}
+
 #global-container {
+  margin-top: 2%;
   position: relative;
   z-index: 0;
 }
-
-#container {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+#global-container.navOpen #container {
+  transform: translate(-150px, 30px);
+}
+#global-container.navOpen #container-cover {
+  display: block;
+  z-index: 5;
+}
+body #global-container.navOpen {
+  overflow: hidden;
 }
 
-.swiper {
-  width: 600px;
-  height: 300px;
+#container {
+  position: relative;
+  width: 100%;
+  transition: transform 0.3s ease-in-out;
+}
+#container-cover {
+  display: none;
+  position: absolute;
+  width: 98%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 .nav-menu {
@@ -63,35 +98,69 @@ html {
 }
 
 .header {
+  position: relative;
   width: 96%;
   height: 95vh;
-  margin: 2% auto;
+  margin: 0 auto;
   overflow: hidden;
   border-radius: 10px;
-  background-image: url(../imgs/top_img_sm.jpg);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../imgs/top_img_sm.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
 @media screen and (min-width: 768px) {
   .header {
-    background-image: url(../imgs/top_img_lg.jpg);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../imgs/top_img_lg.jpg);
     background-repeat: no-repeat;
     background-size: cover;
   }
 }
 .header-flex {
+  position: relative;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  z-index: 1;
 }
 .header-logo img {
   width: 235px;
   height: 50px;
 }
+.header-text {
+  position: relative;
+  width: 100%;
+  height: 100px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+.header-text_area {
+  text-align: center;
+  color: white;
+  font-weight: 900;
+}
+.header-text_area h2 {
+  color: white;
+  font-size: 3.2rem;
+  text-shadow: 2px 2px 2px #000000;
+}
+.header-text_area p {
+  font-size: 2rem;
+  margin-bottom: 0;
+}
+.header-text_area p:nth-of-type(2) {
+  font-size: 1.6rem;
+}
 .header-btn {
   width: 50px;
   height: 50px;
+}
+@media screen and (min-width: 768px) {
+  .header-btn {
+    display: none;
+  }
 }
 .header-btn_item {
   width: 30px;
@@ -99,4 +168,64 @@ html {
   margin: 10px auto;
   box-sizing: border-box;
   border: 1px solid white;
+  cursor: pointer;
+}
+.header-btn_bd {
+  display: block;
+  margin: 0 auto;
+  width: 23px;
+  height: 4px;
+  background-color: white;
+}
+.header-btn_bd:first-child {
+  margin-top: 3px;
+  margin-bottom: 6px;
+}
+.header-btn_bd:last-child {
+  margin-top: 6px;
+  margin-bottom: 3px;
+}
+
+.main {
+  width: 100%;
+  height: 500px;
+}
+.main .news {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  width: 360px;
+  height: 40px;
+  margin: 20px auto;
+  background-color: #A3B8CC;
+  border: 1px solid #003366;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+.main .news-more {
+  width: 20%;
+  height: 40px;
+}
+.main .news-more p {
+  text-align: center;
+  line-height: 40px;
+}
+.main .news .swiper {
+  width: 100%;
+  height: 40px;
+}
+.main .news .swiper-slide a {
+  text-decoration: none;
+}
+.main .news .swiper-slide p {
+  display: inline-block;
+  line-height: 40px;
+  text-align: center;
+}
+.main .news .swiper-slide p:nth-child(1) {
+  width: 30%;
+}
+.main .news .swiper-slide p:nth-child(2) {
+  width: 50%;
 }/*# sourceMappingURL=style.css.map */

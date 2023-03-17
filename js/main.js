@@ -1,21 +1,33 @@
+window.addEventListener('DOMContentLoaded', function(){
+  const btn = document.querySelector('.header-btn');
+  const domContainer = document.querySelector('#global-container');
+  const coverContainer = document.querySelector('#container-cover');
+  const body = document.querySelector('body');
+
+  btn.addEventListener('click', function() {
+    domContainer.classList.add('navOpen');
+
+    if(domContainer.className == "navOpen") {
+      body.classList.add('hidden');
+
+      coverContainer.addEventListener('click', function() {
+        domContainer.classList.remove('navOpen');
+        body.classList.remove('hidden');
+      })
+    };
+  })
+
+})
+
+
+//swiper
 const swiper = new Swiper('.swiper', {
     // Optional parameters
     direction: 'vertical',
     loop: true,
-  
-    // If we need pagination
-    pagination: {
-      el: '.swiper-pagination',
-    },
-  
-    // Navigation arrows
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-  
-    // And if we need scrollbar
-    scrollbar: {
-      el: '.swiper-scrollbar',
-    },
+    allowTouchMove: false,
+    speed: 1000,
+    autoplay: {
+      delay:2500
+    }
   });
