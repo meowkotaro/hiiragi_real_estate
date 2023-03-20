@@ -12,7 +12,7 @@
 
     &.navOpen {
         #container {
-            transform: translate(-150px, 30px);
+            transform: translate(-170px, 30px);
         
             &-cover {
                 display: block;
@@ -46,7 +46,7 @@
 
     &-menu {
         position: absolute;
-        width: 150px;
+        width: 175px;
         top: 50px;
         right: 0;
         margin-left: auto;
@@ -222,33 +222,8 @@
     //search area
     .search {
         width: 95%;
-        &-header {
-            position: relative;
-            width: 100%;
-            height: 60px;
-            &_bg {
-                position: absolute;
-                align-items: center;
-                top: 0;
-                left: 5%;
-                img {
-                    width: 50px;
-                    height: 50px;
-                    object-fit: cover;
-                    padding: 0;
-                }
-            }
-
-            &_text {
-                position: absolute;
-                bottom: 0;
-                left: 50%;
-                transform: translateX(-50%);
-                h2 {
-                    margin-bottom: 0;
-                }
-            }
-        }
+        
+        @include areaHeader();
 
         &-content {
             justify-content: space-between;
@@ -369,5 +344,142 @@
         }
     }
 
+    //houses area
+    .houses {
+        position: relative;
+        @extend .section-mg;
+        width: 95%;
+        &::before {
+            top: 0;
+            left: 2%;
+            content: "";
+            position: absolute;
+            background-color: $cBtn;
+            border-radius: 50px 0 0 50px;
+            width: 105%;
+            height: 1200px;
+        }
 
+        &-container {
+            position: relative;
+            z-index: 2;
+            justify-content: space-around;
+        }
+
+        @include areaHeader();
+
+        &-area {
+            position: relative;
+            // width: 170px;
+            max-width: 200px;
+            height: 210px;
+            left: 5%;
+            @extend .item-mt;
+        }
+        &-img {
+            position: absolute;
+            width: 150px;
+            height: 120px;
+            right: 0;
+            top: 0;
+            z-index: 0;
+        }
+        &-size {
+            position: absolute;
+            height: 20px;
+            width: 70px;
+            left: 0;
+            top: 110px;
+            background-color: white;
+            border: 1px solid black;
+            box-sizing: border-box;
+            border-radius: 5px;
+            z-index: 2;
+            p {
+                text-align: center;
+                line-height: 20px;
+                font-weight: 600;
+            }
+        }
+        &-textarea {
+            position: absolute;
+            width: 155px;
+            height: 100px;
+            background-color: $cTextArea;
+            border-top: 1px solid black;
+            border-right: 1px solid black;
+            border-radius: 5px;
+            bottom: 0;
+            left: 0;
+            z-index: 1;
+
+            @include flex(
+                $fd:column,
+                $jc:space-around
+            );
+
+            li {
+                list-style-type: none;
+            }
+
+            &_rent {
+                align-self: end;
+                font-size: 2rem;
+                line-height: 25px;
+                font-weight: 700;
+                padding-right: 10px;
+            }
+            &_name {
+                font-weight: 700;
+                line-height: 20px;
+                @extend .md-font;
+            }
+            &_addres {
+                line-height: 15px;
+                @extend .p-font;
+            }
+            &_near {
+                line-height: 15px;
+                @extend .p-font;
+            }
+            &_feature {
+                line-height: 12px;
+                @extend .sm-font;
+            }
+        }
+    }
+    //houses area
+
+    //buy 
+    .buy {
+        position: relative;
+        @extend .section-mg;
+        width: 95%;
+        &::before {
+            top: 40px;
+            right: 2%;
+            content: "";
+            position: absolute;
+            background-color: white;
+            border-radius:  0 50px 50px 0;
+            width: 105%;
+            height: 1000px;
+        }
+        
+        @include areaHeader();
+
+        &-container {
+            position: relative;
+            z-index: 2;
+            justify-content: space-around;
+        }
+
+        &-area {
+            width: 320px;
+            height: 320px;
+            border-radius: 50px;
+            border: 1px solid black;
+            @extend .item-mt;
+        }
+    }
 }
