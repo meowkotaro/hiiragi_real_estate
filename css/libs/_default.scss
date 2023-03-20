@@ -4,10 +4,26 @@ $cMain: #003366;
 $cBtn: #A3B8CC;
 $cArea: #E6E6E6;
 $cH2Background: rgba(0, 51, 102, 0.1);
+$cBg: #E6E6E6;
 
 
 html{
     font-size: 62.5%;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 0rem;
+}
+
+.bg-font {
+    font-size: 4.8rem;
+    color: $cH2Background;
+    font-weight: 900;
+
+    @include mq() {
+        font-size: 6.4rem;
+    }
 }
 
 .h2-font {
@@ -43,6 +59,10 @@ html{
     }
 }
 
+.item-mt {
+    margin-top: 30px;
+}
+
 .sm-mg {
     margin-bottom: 20px;
     @include mq() {
@@ -56,4 +76,14 @@ html{
 
 h2 {
     @extend .h2-font;
+}
+
+.container {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.row {
+    margin-left: 0;
+    margin-right: 0;
 }

@@ -2,6 +2,22 @@ html {
   font-size: 62.5%;
 }
 
+p {
+  margin-top: 0;
+  margin-bottom: 0rem;
+}
+
+.bg-font {
+  font-size: 4.8rem;
+  color: rgba(0, 51, 102, 0.1);
+  font-weight: 900;
+}
+@media screen and (min-width: 768px) {
+  .bg-font {
+    font-size: 6.4rem;
+  }
+}
+
 .h2-font, h2 {
   font-size: 2rem;
   color: #003366;
@@ -12,20 +28,20 @@ html {
   }
 }
 
-.md-font {
+.md-font, .nav, .main .news-more {
   font-size: 1.6rem;
 }
 @media screen and (min-width: 768px) {
-  .md-font {
+  .md-font, .nav, .main .news-more {
     font-size: 1.8rem;
   }
 }
 
-.sl-font {
+.sl-font, .main .search-text {
   font-size: 1.4rem;
 }
 @media screen and (min-width: 768px) {
-  .sl-font {
+  .sl-font, .main .search-text {
     font-size: 1.6rem;
   }
 }
@@ -39,6 +55,10 @@ html {
   }
 }
 
+.item-mt, .main .search-area, .main .search-rent, .main .search-room, .main .search-terms {
+  margin-top: 30px;
+}
+
 .sm-mg {
   margin-bottom: 20px;
 }
@@ -50,6 +70,16 @@ html {
 
 .md-mg {
   margin-bottom: 50px;
+}
+
+.container {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.row {
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .hidden {
@@ -78,6 +108,7 @@ body #global-container.navOpen {
   transition: transform 0.3s ease-in-out;
 }
 #container-cover {
+  border-radius: 10px;
   display: none;
   position: absolute;
   width: 98%;
@@ -228,4 +259,120 @@ body #global-container.navOpen {
 }
 .main .news .swiper-slide p:nth-child(2) {
   width: 50%;
+}
+.main .search {
+  width: 95%;
+}
+.main .search-header {
+  position: relative;
+  width: 100%;
+  height: 60px;
+}
+.main .search-header_bg {
+  position: absolute;
+  align-items: center;
+  top: 0;
+  left: 5%;
+}
+.main .search-header_bg img {
+  width: 50px;
+  height: 50px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  padding: 0;
+}
+.main .search-header_text {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.main .search-header_text h2 {
+  margin-bottom: 0;
+}
+.main .search-content {
+  justify-content: space-between;
+}
+.main .search-text {
+  font-weight: 600;
+}
+.main .search-area_item {
+  height: 80px;
+}
+.main .search-area_item .bg {
+  display: block;
+  text-decoration: none;
+  color: white;
+  width: 100%;
+  max-width: 180px;
+  height: 60px;
+  margin: 10px auto;
+  border-radius: 10px;
+  background-color: #003366;
+}
+.main .search-area_item .bg p {
+  text-align: center;
+  line-height: 60px;
+  font-size: 3.6rem;
+}
+.main .search-rent_item {
+  height: 50px;
+}
+.main .search-rent_item .bg {
+  display: block;
+  text-decoration: none;
+  color: black;
+  width: 100%;
+  max-width: 120px;
+  height: 30px;
+  margin: 10px auto;
+  border-radius: 10px;
+  background-color: #A3B8CC;
+}
+.main .search-rent_item .bg p {
+  text-align: center;
+  line-height: 30px;
+  font-size: 1.2rem;
+}
+.main .search-room_item {
+  height: 50px;
+}
+.main .search-room_item .bg {
+  display: block;
+  text-decoration: none;
+  color: black;
+  width: 100%;
+  max-width: 120px;
+  height: 30px;
+  margin: 10px auto;
+  border-radius: 10px;
+  background-color: #A3B8CC;
+}
+.main .search-room_item .bg p {
+  text-align: center;
+  line-height: 30px;
+  font-size: 1.2rem;
+}
+.main .search-terms_item {
+  height: 90px;
+}
+.main .search-terms_item .bg {
+  display: block;
+  text-decoration: none;
+  color: black;
+  width: 100%;
+  max-width: 120px;
+  height: 70px;
+  margin: 10px auto;
+  border-radius: 10px;
+  background-color: #E6E6E6;
+}
+.main .search-terms_item .bg p {
+  text-align: center;
+  line-height: 20px;
+  font-size: 1rem;
+}
+.main .search-terms_img {
+  margin-top: 5px;
+  height: 45px;
 }/*# sourceMappingURL=style.css.map */
